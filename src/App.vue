@@ -18,7 +18,6 @@ main {
   flex-direction: column;
 
   .router-view {
-    margin-top: 60px;
   }
 }
 </style>
