@@ -66,7 +66,9 @@ function toggle() {
   <header class="header">
     <div class="container">
       <nav class="nav">
-        <a href="/" class="logo"> LOGO </a>
+        <a href="/" class="logo">
+          <img src="http://www.fosilavi.tj/img/logo.png" alt="">
+        </a>
 
         <ul class="menu" :class="isShow ? 'open' : 'hide'">
           <li
@@ -113,8 +115,6 @@ function toggle() {
 </template>
 
 <style scoped lang="scss">
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
-
 a {
   color: #ffffff;
   text-decoration: none;
@@ -130,10 +130,11 @@ ul li {
 }
 .header {
   transition: 0.3s;
-  position: relative;
+  position: sticky;
+  top: 0;
   width: 100%;
-  padding: 20px 0;
-  background: #333;
+  padding: 10px 0;
+  background: #3c8dbc ;
 
   @media (max-width: 768px) {
     padding: 10px 0;
@@ -156,6 +157,10 @@ ul li {
     line-height: 42px;
     text-transform: uppercase;
     font-weight: 900;
+
+    img {
+      max-width: 40px;
+    }
   }
   .menu {
     display: flex;
@@ -179,7 +184,7 @@ ul li {
       left: 0;
       flex-direction: column;
       width: 100%;
-      background: #333;
+      background: #3c8dbc;
     }
   }
   .item {
@@ -222,7 +227,6 @@ ul li {
 
 .header.mini {
   padding: 10px 0;
-  background-color: #fff;
   box-shadow: 0 0 10px 0 rgba(#000, 0.2);
 }
 </style>
