@@ -66,9 +66,9 @@ function toggle() {
   <header class="header">
     <div class="container">
       <nav class="nav">
-        <a href="/" class="logo">
-          <img src="http://www.fosilavi.tj/img/logo.png" alt="">
-        </a>
+        <router-link to="/" class="logo">
+          <img src="../assets/images/logo.png" alt="">
+        </router-link>
 
         <ul class="menu" :class="isShow ? 'open' : 'hide'">
           <li
@@ -153,11 +153,6 @@ ul li {
     }
   }
   .logo {
-    font-size: 32px;
-    line-height: 42px;
-    text-transform: uppercase;
-    font-weight: 900;
-
     img {
       max-width: 40px;
     }
@@ -166,6 +161,8 @@ ul li {
     display: flex;
     align-items: center;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 
     &.open {
       display: flex;
@@ -180,7 +177,7 @@ ul li {
     @media (max-width: 768px) {
       padding: 10px 0;
       position: absolute;
-      top: 62px;
+      top: 50px;
       left: 0;
       flex-direction: column;
       width: 100%;
