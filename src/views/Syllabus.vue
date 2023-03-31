@@ -18,7 +18,7 @@ export default {
   <div class="container">
     <h1>Syllabus Page</h1>
 
-    <VuePDF :pdf="pdf"></VuePDF>
+<!--    <VuePDF :pdf="pdf"></VuePDF>-->
   </div>
 </template>
 
