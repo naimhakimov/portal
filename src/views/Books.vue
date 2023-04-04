@@ -1,5 +1,5 @@
 <template>
   <div class="container">
-    <h1>Books Page</h1>
+    <h1>Китобхо</h1>
   </div>
 </template>

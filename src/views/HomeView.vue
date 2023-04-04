@@ -4,7 +4,7 @@
 <template>
   <section class="home">
     <img class="home__img"
-         src="https://www.hb.se/globalassets/global/hb---externt/biblioteket/soka-information/soka_info_header_2000.jpg?width=1600&quality=95&mode=min&v=402040"
+         src="../assets/main.jpg"
          alt="">
     <div class="container">
       <h1 class="mt-1">Lorem ipsum dolor sit amet, consectetur.</h1>

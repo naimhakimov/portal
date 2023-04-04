@@ -23,6 +23,7 @@ main {
 
   .router-view {
     flex: 1 1 auto;
+    padding: 0 0 15px 0;
   }
 }
 </style>

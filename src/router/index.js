@@ -30,6 +30,11 @@ const router = createRouter({
       component: () => import('../views/HomeWork.vue')
     },
     {
+      path: '/home-work/:id',
+      name: 'home-work-by-id',
+      component: () => import('../views/HomeWork.vue')
+    },
+    {
       path: '/author',
       name: 'author',
       component: () => import('../views/Author.vue')
