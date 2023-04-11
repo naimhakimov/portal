@@ -8,9 +8,9 @@ import Footer from "./components/Footer.vue";
   <main>
     <Header />
     <div class="router-view">
-      <img class="router-view__img"
+      <!-- <img class="router-view__img"
          src="./assets/main.jpg"
-         alt="">
+         alt=""> -->
       <RouterView />
     </div>
 

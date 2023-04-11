@@ -1,21 +1,6 @@
 <script setup>
 import { ref } from "vue";
 
-window.addEventListener("scroll", function () {
-  let windowTop = window.pageYOffset;
-  if (windowTop > 100) {
-    document.querySelector(".header").classList.add("mini");
-  } else {
-    document.querySelector(".header").classList.remove("mini");
-  }
-});
-
-if (window.pageYOffset > 100) {
-  document.querySelector(".header").classList.add("mini");
-} else {
-  document.querySelector(".header")?.classList.remove("mini");
-}
-
 const menu = [
   {
     name: "Силлабус",
@@ -110,6 +95,7 @@ ul li {
   width: 100%;
   padding: 10px 0;
   background: #3c8dbc;
+  z-index: 1000;
 
   &__search {
     outline: none;
