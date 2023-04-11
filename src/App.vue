@@ -8,6 +8,9 @@ import Footer from "./components/Footer.vue";
   <main>
     <Header />
     <div class="router-view">
+      <img class="router-view__img"
+         src="./assets/main.jpg"
+         alt="">
       <RouterView />
     </div>
 
@@ -24,6 +27,10 @@ main {
   .router-view {
     flex: 1 1 auto;
     padding: 0 0 15px 0;
+
+    &__img {
+      max-width: 100%;
+    }
   }
 }
 </style>
