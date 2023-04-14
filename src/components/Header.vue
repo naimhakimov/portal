@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from "vue";
-
 const menu = [
   {
     name: "Силлабус",
@@ -19,193 +17,108 @@ const menu = [
     link: "/home-work",
   },
   {
-    name: "Амали",
-    link: "/practice",
-  },
-  {
-    name: "Муалифон",
-    link: "/author",
-  },
-  {
     name: "Китоб",
     link: "/books",
+  },
+  {
+    name: "Амали",
+    link: "/practice",
   },
   {
     name: "Мултимедиа",
     link: "/multimedia",
   },
+  {
+    name: "Cарчашмахои иловаги аз сомона",
+    link: "additional-resources",
+  },
+  {
+    name: "Муалифон",
+    link: "/author",
+  },
 ];
-
-const isShow = ref(false);
-
-function toggle() {
-  isShow.value = !isShow.value;
-}
 </script>
 
 <template>
-  <header class="header">
+  <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
     <div class="container">
-      <nav class="nav">
-        <router-link to="/" class="logo">
-          <img src="../assets/images/logo.png" alt="" />
-          <span style="margin-left: 10px">Информатикаи амали</span>
-        </router-link>
+      <router-link
+          to="/"
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="#"
+      >
+        <img style="width: 24px" src="../assets/images/logo.png" alt=""/>
+        Информатикаи амалӣ
+      </router-link>
+      <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"
+              v-for="(item, index) in menu.slice(0, 6)"
+              :key="index">
+            <router-link
+                :to="item.link"
+                active-class="active"
+                class="nav-link"
+                aria-current="page"
+                href="#"
+            >
+              {{ item.name }}
+            </router-link>
+          </li>
 
-        <ul class="menu" :class="isShow ? 'open' : 'hide'">
-          <li class="item" v-for="item in menu" :key="item.link" @click="isShow = false">
-            <router-link :to="item.link">{{ item.name }}</router-link>
+          <li class="nav-item dropdown">
+            <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+            >
+              Бештар
+            </a>
+            <ul class="dropdown-menu">
+              <li v-for="i in menu.slice(6)" :key="i.link">
+                <router-link :to="i.link" active-class="active" class="dropdown-item" href="#">
+                  {{ i.name }}
+                </router-link>
+              </li>
+            </ul>
           </li>
         </ul>
-
-        <input type="search" placeholder="Чустучу" class="header__search" />
-
-        <div class="burger" @click="toggle">
-          <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 18L20 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-            <path d="M4 12L20 12" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-            <path d="M4 6L20 6" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
-          </svg>
-        </div>
-      </nav>
+        <form class="d-flex" role="search">
+          <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+          />
+           <button class="btn btn-outline-success" type="button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
     </div>
-  </header>
+  </nav>
 </template>
-
-<style scoped lang="scss">
-a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.container {
-  max-width: 1200px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-
-ul li {
-  list-style: none;
-}
-
-.header {
-  transition: 0.3s;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  padding: 10px 0;
-  background: #3c8dbc;
-  z-index: 1000;
-
-  &__search {
-    outline: none;
-    border: 1px solid #757474;
-    padding: 2px 5px;
-    border-radius: 30px;
-    width: 150px;
-
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-
-    @media (max-width: 768px) {
-      padding: 10px 0;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .burger {
-        display: none;
-
-        @media (max-width: 768px) {
-          display: block;
-        }
-      }
-    }
-
-    .logo {
-      img {
-        max-width: 40px;
-      }
-    }
-
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-
-      &.open {
-        display: flex;
-      }
-
-      &.hide {
-        @media (max-width: 768px) {
-          display: none;
-        }
-      }
-
-      @media (max-width: 768px) {
-        padding: 10px 0;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        flex-direction: column;
-        width: 100%;
-        background: #3c8dbc;
-      }
-    }
-
-    .item {
-      position: relative;
-      font-size: 14px;
-      line-height: 16px;
-      padding-bottom: 5px;
-
-      a {
-        transition: 0.3s;
-        text-transform: uppercase;
-
-        &:not(:last-child) {
-          margin-right: 20px;
-        }
-
-        &::after {
-          content: "";
-          background-color: white;
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 0%;
-          height: 2px;
-          transition: 0.3s;
-        }
-
-        &.router-link-active {
-          pointer-events: none;
-
-          &::after {
-            width: 50%;
-          }
-        }
-
-        &:hover {
-          &::after {
-            width: 50%;
-          }
-        }
-      }
-    }
-  }
-
-  .header.mini {
-    padding: 10px 0;
-    box-shadow: 0 0 10px 0 rgba(#000, 0.2);
-  }
-</style>

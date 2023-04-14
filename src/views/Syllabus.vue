@@ -8,8 +8,6 @@ const { pdf, pages, info } = usePDF(pdfFile);
 
 <template>
   <div class="container">
-    <h1>Силлабус</h1>
-
     <div class="preview" v-for="page in pages" :key="page">
       <VuePDF :pdf="pdf" :page="page" />
     </div>

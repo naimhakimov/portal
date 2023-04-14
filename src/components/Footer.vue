@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="bg-dark">
     <div class="container">
       <p>© {{ new Date().getFullYear() }} Информатикаи амали, Ҳамаи ҳуқуқҳо ҳифз карда шудаанд. </p>
     </div>
