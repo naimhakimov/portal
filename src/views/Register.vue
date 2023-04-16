@@ -79,7 +79,7 @@ const onSubmit = async () => {
         </template>
       </button>
       <div class="d-flex justify-content-end">
-        у вас есть аккаунт &nbsp;
+        У вас есть аккаунт &nbsp;
         <a @click="$router.push('/login')"
            role="button"
            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover pointer-event">
