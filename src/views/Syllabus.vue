@@ -7,7 +7,7 @@ const { pdf, pages, info } = usePDF(pdfFile);
 </script>
 
 <template>
-  <div class="container">
+  <div class="p-3">
     <div class="preview" v-for="page in pages" :key="page">
       <VuePDF :pdf="pdf" :page="page" />
     </div>

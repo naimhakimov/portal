@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
-    <h1>Слайд</h1>
+  <div class="p-3">
+    <h3>Слайд</h3>
   </div>
 </template>

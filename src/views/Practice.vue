@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
-    <h1>Амали</h1>
+  <div class="p-3">
+    <h3>Амали</h3>
   </div>
 </template>

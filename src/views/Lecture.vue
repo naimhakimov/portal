@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <h1>Лексияҳо</h1>
+  <div class="p-3">
+    <h3>Лексияҳо</h3>
 
     <div class="accordion" id="accordionExample">
       <div class="accordion-item" v-for="(_, index) in Array(15)" :key="index">

@@ -1,20 +1,15 @@
 <script setup>
-import {multi} from "../config/multi";
+import {resources} from "../config/resources";
 
-const videos = multi.videos
+const videos = resources.videos
 </script>
 
 <template>
-  <div class="container">
-    <h1 class="mt-3">МУЛТИМЕДИА</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi impedit in necessitatibus nemo numquam
-      officia perspiciatis, quod ullam! Amet aperiam deleniti earum eum excepturi ipsa iure laborum libero maiores,
-      molestiae molestias odio porro possimus quasi rem sequi similique sint voluptas.
-    </p>
+  <div class="p-3">
+    <h3>МУЛТИМЕДИА</h3>
 
     <div class="d-flex flex-wrap gap-3 mb-3">
-      <iframe v-for="video in videos" width="100%" height="600px"
+      <iframe v-for="video in videos" width="45%" height="621"
               :src="video" title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

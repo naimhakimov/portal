@@ -1,32 +1,31 @@
 <script setup>
-import { RouterView } from "vue-router";
-import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+import Aside from "./components/Aside.vue";
 </script>
 
 <template>
-  <main>
-    <Header />
+  <main class="v-container">
+    <Aside/>
     <div class="router-view">
-      <!-- <img class="router-view__img"
-         src="./assets/main.jpg"
-         alt=""> -->
-      <RouterView />
+      <div class="d-flex flex-column h-100">
+        <RouterView style="flex: 1"/>
+        <Footer/>
+      </div>
     </div>
-
-    <Footer />
   </main>
 </template>
 
 <style lang="scss" scoped>
 main {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
 
   .router-view {
+    margin-left: 300px;
+    height: 100vh;
     flex: 1 1 auto;
-    padding: 0 0 15px 0;
 
     &__img {
       max-width: 100%;
