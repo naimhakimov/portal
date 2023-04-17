@@ -35,7 +35,7 @@ export const additionalResources = [
         img: 'https://www.visme.co/wp-content/themes/visme/images/Visme-logo-dark-hor.svg',
         title: 'Visme',
         description: 'Visme — это все, что вам нужно для создания красивого контента. Это один из инструментов создавайте, храните и делитесь своим контентом. Один инструмент, который дает вам все шаблоны, графика, ресурсы, которые вам нужны. И место, где можно получить бесплатный образовательный контент, созданный для тех, кто не является дизайнером. ресурсы, чтобы стать удивительными визуальными коммуникаторами.',
-        link: 'https://vsesdal.com'
+        link: 'https://www.visme.co/ru/'
     },
     {
         img: 'https://donishju.net/chandrasona/2020/10/logo-230.png',
