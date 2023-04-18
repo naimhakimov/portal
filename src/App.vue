@@ -1,35 +1,20 @@
-<script setup>
-import Footer from "./components/Footer.vue";
-import Aside from "./components/Aside.vue";
-</script>
-
 <template>
-  <main class="v-container">
-    <Aside/>
-    <div class="router-view">
-      <div class="d-flex flex-column h-100">
-        <RouterView style="flex: 1"/>
-        <Footer/>
-      </div>
-    </div>
-  </main>
+  <component :is="layout"></component>
 </template>
 
-<style lang="scss" scoped>
-main {
-  position: relative;
-  display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
+<script>
+import Main from './layouts/MainLayout.vue'
+import Empty from './layouts/EmptyLayout.vue'
 
-  .router-view {
-    margin-left: 300px;
-    height: 100vh;
-    flex: 1 1 auto;
-
-    &__img {
-      max-width: 100%;
+export default {
+  computed: {
+    layout() {
+      return this.$route.meta.layout
     }
+  },
+  components: {
+    Main,
+    Empty
   }
 }
-</style>
+</script>
