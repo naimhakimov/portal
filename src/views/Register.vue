@@ -47,18 +47,18 @@ const onSubmit = async () => {
             type="button"
             @click="$router.push('/')"
             class="btn btn-primary btn-sm">
-          На главную
+          Асосӣ
         </button>
       </div>
-      <h2>Регистрация</h2>
+      <h2>Бақайдгирӣ</h2>
 
       <div class="mb-3">
-        <label class="form-label">Ваша имя</label>
+        <label class="form-label">Ному насаб</label>
         <input v-model="registerForm.first_name" type="text" class="form-control" placeholder="Name" required>
       </div>
 
       <div class="mb-3">
-        <label class="form-label">Email</label>
+        <label class="form-label">Почтаи электронӣ</label>
         <input v-model="registerForm.email" type="email" class="form-control" placeholder="name@example.com" required>
       </div>
 
@@ -73,19 +73,19 @@ const onSubmit = async () => {
           class="btn btn-primary mb-2 d-flex gap-2 align-items-center justify-content-center"
           type="button"
           @click="onSubmit">
-        Регистрация
+        Бақайдгирӣ
         <template v-if="isLoading">
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         </template>
       </button>
-      <div class="d-flex justify-content-end">
-        У вас есть аккаунт &nbsp;
+      
+   
         <a @click="$router.push('/login')"
            role="button"
-           class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover pointer-event">
-          вход
+           class="text-center link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover pointer-event">
+          Даромадан
         </a>
-      </div>
+   
     </div>
   </form>
 </template>
