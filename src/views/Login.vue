@@ -21,7 +21,7 @@ const onSubmit = async () => {
       }
     })
     if (response.status === 400) {
-      throw 'такового пользователя в базе данных не существует'
+      throw 'Такового пользователя в базе данных не существует'
     } else if (response.status === 500) {
       throw 'Упс! Что-то пошло не так.\n'
     } else {
@@ -46,13 +46,13 @@ const onSubmit = async () => {
             type="button"
             @click="$router.push('/')"
             class="btn btn-primary btn-sm">
-          На главную
+          Асосӣ
         </button>
       </div>
-      <h2>Вход</h2>
+      <h2>Даромадан</h2>
 
       <div class="mb-3">
-        <label class="form-label">Email</label>
+        <label class="form-label">Почтаи электронӣ</label>
         <input v-model="loginForm.email" type="email" class="form-control" placeholder="name@example.com" required>
       </div>
 
@@ -67,20 +67,18 @@ const onSubmit = async () => {
           :disabled="isLoading"
           class="btn btn-primary mb-3 d-flex gap-2 align-items-center justify-content-center"
           type="button">
-        Вход
+        Даромадан
         <template v-if="isLoading">
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         </template>
       </button>
 
-      <div class="d-flex ">
-        У вас ещё нет аккаунта &nbsp;
+      
         <a role="button"
            @click="$router.push('/register')"
-           class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-          зарегистрироваться
+           class="text-center link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+          Бақайдгирӣ
         </a>
-      </div>
 
     </div>
   </form>
