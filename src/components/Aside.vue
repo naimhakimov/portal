@@ -1,58 +1,80 @@
 <script setup>
-import {ref} from "vue";
-
-const menu = [
+import {onMounted, ref, watch} from "vue";
+const menuItems = [
   {
     name: "Силлабус",
     link: "/syllabus",
-    icon: 'book'
+    icon: 'book',
+    auth: false
   },
   {
     name: "Лексия",
     link: "/lecture",
-    icon: 'file-earmark-pdf-fill'
+    icon: 'file-earmark-pdf-fill',
+    auth: false
   },
   {
     name: "Слайд",
     link: "/slide",
-    icon: 'file-earmark-ppt-fill'
+    icon: 'file-earmark-ppt-fill',
+    auth: true
   },
   {
     name: "Cупоришот",
     link: "/home-work",
-    icon: 'list-task'
+    icon: 'list-task',
+    auth: false
   },
   {
     name: "Китоб",
     link: "/books",
-    icon: 'book-half'
+    icon: 'book-half',
+    auth: false
   },
   {
     name: "Амали",
     link: "/practice",
-    icon: 'pencil-square'
+    icon: 'pencil-square',
+    auth: true
   },
   {
     name: "Мултимедиа",
     link: "/multimedia",
-    icon: 'youtube'
+    icon: 'youtube',
+    auth: true
   },
   {
     name: "Cарчашмаҳои иловаги аз сомона",
     link: "/additional-resources",
-    icon: 'file-earmark-plus'
+    icon: 'file-earmark-plus',
+    auth: false
   },
   {
     name: "Муалифон",
     link: "/author",
-    icon: 'people-fill'
+    icon: 'people-fill',
+    auth: true
   },
-];
-const user = ref(JSON.parse(localStorage.getItem('user'))?.user ?? null)
+]
 
+const menu = ref(menuItems);
+const user = ref(JSON.parse(localStorage.getItem('user'))?.user)
+
+onMounted(() => {
+ checkAuth()
+})
+
+function checkAuth() {
+  if (user.value) {
+    menu.value = menu.value.map(item => ({...item, auth: false}))
+  } else {
+    menu.value = menuItems;
+  }
+}
 function logout() {
   localStorage.clear()
   user.value = null
+  checkAuth()
 }
 </script>
 
@@ -68,10 +90,12 @@ function logout() {
         <button class="btn btn-primary" type="submit">Ҷустуҷӯ</button>
       </form>
 
-      <router-link active-class="active" class="menu-group__item text-dark" v-for="item of menu" :to="item.link">
-        <i class="bi" :class="'bi-' + item.icon"></i>
-        {{ item.name }}
-      </router-link>
+      <div v-for="item of menu" :key="item.link">
+        <router-link v-if="!item.auth" :to="item.link" active-class="active" class="menu-group__item text-dark">
+          <i class="bi" :class="'bi-' + item.icon"></i>
+          {{ item.name }}
+        </router-link>
+      </div>
 
       <template v-if="!user">
         <router-link to="/login" class="menu-group__item text-white bg-primary">
