@@ -20,7 +20,7 @@ const menuItems = [
     auth: true
   },
   {
-    name: "Cупоришот",
+    name: "Супоришот",
     link: "/home-work",
     icon: 'list-task',
     auth: false
@@ -32,7 +32,7 @@ const menuItems = [
     auth: false
   },
   {
-    name: "Амали",
+    name: "Амалӣ",
     link: "/practice",
     icon: 'pencil-square',
     auth: true
@@ -44,7 +44,7 @@ const menuItems = [
     auth: true
   },
   {
-    name: "Cарчашмаҳои иловаги аз сомона",
+    name: "Cарчашмаҳои иловагӣ аз сомона",
     link: "/additional-resources",
     icon: 'file-earmark-plus',
     auth: false
