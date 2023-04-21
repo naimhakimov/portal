@@ -14,8 +14,8 @@ onMounted(async () => {
     <div class="card mb-3" v-for="author in authors" :key="author.id">
       <div class="row g-0">
         <div class="col-md-4 d-flex align-items-center justify-content-center p-2">
-          <i class="bi bi-person-fill" style="font-size: 120px;"></i>
-          <!-- <img :src="author.id" class="img-fluid rounded-start" alt="..." /> -->
+           <img v-if="author?.photo" :src="author.photo" class="img-fluid rounded-circle" alt="..." />
+          <i v-else class="bi bi-person-fill" style="font-size: 120px;"></i>
         </div>
         <div class="col-md-8">
           <div class="card-body">
