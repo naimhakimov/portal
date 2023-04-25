@@ -31,6 +31,12 @@ const router = createRouter({
             component: () => import('../views/Lecture.vue')
         },
         {
+            path: '/lecture/:id',
+            name: 'lecture-by-id',
+            meta: {layout: 'main'},
+            component: () => import('../views/Lecture.vue')
+        },
+        {
             path: '/slide',
             name: 'slide',
             meta: {layout: 'main', auth: true},
@@ -57,6 +63,12 @@ const router = createRouter({
         {
             path: '/practice',
             name: 'practice',
+            meta: {layout: 'main', auth: true},
+            component: () => import('../views/Practice.vue')
+        },
+        {
+            path: '/practice/:id',
+            name: 'practice-by-id',
             meta: {layout: 'main', auth: true},
             component: () => import('../views/Practice.vue')
         },

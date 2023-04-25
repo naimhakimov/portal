@@ -1,24 +1,10 @@
 <script setup>
-import { usePDF, VuePDF } from "@tato30/vue-pdf";
-
 import pdfFile from "../assets/files/syllabus.pdf";
-
-const { pdf, pages, info } = usePDF(pdfFile);
 </script>
 
 <template>
   <div class="p-3">
-    <div class="preview" v-for="page in pages" :key="page">
-      <VuePDF :pdf="pdf" :page="page" />
-    </div>
+    <iframe :src="pdfFile" frameborder="0" width="100%" height="100%"></iframe>
   </div>
 </template>
-
-<style>
-.preview {
-  display: flex;
-  justify-content: center;
-}
-</style>
-
 
