@@ -1,1 +1,1 @@
-export const apiUrl = 'https://sharipova-sh-backend.cyclic.app/api'
+export const apiUrl = 'https://portaltj.cyclic.app/api'
