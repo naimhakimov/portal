@@ -11,7 +11,7 @@ onMounted(async () => {
   <div class="p-3">
     <h3>Муалифон</h3>
 
-    <div class="card mb-3" v-for="author in authors" :key="author.id">
+    <div class="card mb-3" v-for="author in authors.reverse()" :key="author.id">
       <div class="row g-0">
         <div class="col-md-4 d-flex align-items-center justify-content-center p-2">
            <img v-if="author?.photo" :src="author.photo" class="img-fluid rounded-circle" alt="..." />
