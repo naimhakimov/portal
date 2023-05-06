@@ -52,10 +52,58 @@ const router = createRouter({
       component: () => import('../views/Slide/Create.vue')
     },
     {
-      path: '/laboratory-work',
-      name: 'laboratory-work',
+      path: '/practice',
+      name: 'practice',
       meta: { layout: 'main', auth: true },
-      component: () => import('../views/Laboratory-work/index.vue')
+      component: () => import('../views/Practice/index.vue')
+    },
+    {
+      path: '/practice/create',
+      name: 'practice-create',
+      meta: { layout: 'main', auth: true },
+      component: () => import('../views/Practice/Create.vue')
+    },
+    {
+      path: '/practice/edit/:id',
+      name: 'practice-edit',
+      meta: { layout: 'main', auth: true },
+      component: () => import('../views/Practice/Create.vue')
+    },
+    {
+      path: '/author',
+      name: 'author',
+      meta: { layout: 'main', auth: true },
+      component: () => import('../views/Author/index.vue')
+    },
+    {
+      path: '/author/create',
+      name: 'author-create',
+      meta: { layout: 'main', auth: true },
+      component: () => import('../views/Author/Create.vue')
+    },
+    {
+      path: '/author/edit/:id',
+      name: 'author-edit',
+      meta: { layout: 'main', auth: true },
+      component: () => import('../views/Author/Create.vue')
+    },
+    {
+      path: '/book',
+      name: 'book',
+      meta: { layout: 'main', auth: true },
+      component: () => import('../views/Book/index.vue')
+    },
+    {
+      path: '/book/create',
+      name: 'book-create',
+      meta: { layout: 'main', auth: true },
+      component: () => import('../views/Book/Create.vue')
+    },
+    {
+      path: '/book/edit/:id',
+      name: 'book-edit',
+      meta: { layout: 'main', auth: true },
+      component: () => import('../views/Book/Create.vue')
     },
     {
       path: '/material',

@@ -1,9 +1,11 @@
 <script setup>
 import { onMounted, ref } from "vue";
-import { getByKey } from "../services.js";
+import {getAuthors} from "../services.js";
+
 const authors = ref([]);
+
 onMounted(async () => {
-  authors.value = await getByKey("authors");
+  authors.value = await getAuthors();
 });
 </script>
 
@@ -19,7 +21,7 @@ onMounted(async () => {
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <p class="card-text" v-html="author.about"></p>
+            <p class="card-text" v-html="author.description"></p>
           </div>
         </div>
       </div>

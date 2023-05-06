@@ -2,9 +2,9 @@
 import { onMounted, reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import {
-  createMaterial,
-  updateMaterial,
-  getMaterialById,
+  createBook,
+  updateBook,
+  getBookById,
   removeFile,
   uploadFile,
 } from '@/services/http.service.js'
@@ -18,12 +18,11 @@ const material = reactive({ title: '', file: null, photo: null, description: nul
 
 onMounted(async () => {
   if (route.params['id']) {
-    const materialData = await getMaterialById(route.params['id'])
+    const materialData = await getBookById(route.params['id'])
     material.title = materialData.title
     material.file = materialData.file
     material.photo = materialData.photo
     material.description = materialData.description
-    material.link = materialData.link
   }
 })
 
@@ -39,13 +38,13 @@ async function deleteFile(key, id) {
 
 async function onSubmit() {
   if (!route.params['id']) {
-    await createMaterial(material)
+    await createBook(material)
     await toast.success('Сохта шуд')
   } else {
-    await updateMaterial(route.params['id'], material)
+    await updateBook(route.params['id'], material)
     await toast.success('Навсози карда шуд')
   }
-  await router.push('/material')
+  await router.push('/book')
 }
 </script>
 
@@ -56,14 +55,6 @@ async function onSubmit() {
     <label>Ном</label>
     <input
       v-model="material.title"
-      type="text"
-      class="form-control mb-2"
-    />
-
-    <label>Ссылка</label>
-
-    <input
-      v-model="material.link"
       type="text"
       class="form-control mb-2"
     />

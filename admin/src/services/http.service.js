@@ -61,26 +61,68 @@ export function deleteSlideById(id) {
   return HTTP.delete(`/slides/${id}`)
 }
 
-//quiz
+//author
 
-export function getQuiz() {
-  return HTTP.get('/quiz')
+export function getAuthorList() {
+  return HTTP.get('/authors')
 }
 
-export function getQuizById(id) {
-  return HTTP.get(`/quiz/${id}`)
+export function getAuthorById(id) {
+  return HTTP.get(`/authors/${id}`)
 }
 
-export function craeteQuiz(body) {
-  return HTTP.post('/quiz', body)
+export function createAuthor(body) {
+  return HTTP.post('/authors', body)
 }
 
-export function updateQuiz(id, body) {
-  return HTTP.patch(`/quiz/${id}`, body)
+export function updateAuthor(id, body) {
+  return HTTP.patch(`/authors/${id}`, body)
 }
 
-export function removeQuizById(id) {
-  return HTTP.delete(`/quiz/${id}`)
+export function deleteAuthorById(id) {
+  return HTTP.delete(`/authors/${id}`)
+}
+
+// practice
+export function getPracticeList() {
+  return HTTP.get('/practices')
+}
+
+export function getPracticeById(id) {
+  return HTTP.get(`/practices/${id}`)
+}
+
+export function createPractice(body) {
+  return HTTP.post('/practices', body)
+}
+
+export function updatePractice(id, body) {
+  return HTTP.patch(`/practices/${id}`, body)
+}
+
+export function deletePracticeById(id) {
+  return HTTP.delete(`/practices/${id}`)
+}
+
+// book
+export function getAllBook() {
+  return HTTP.get('/books')
+}
+
+export function getBookById(id) {
+  return HTTP.get(`/books/${id}`)
+}
+
+export function createBook(body) {
+  return HTTP.post('/books', body)
+}
+
+export function updateBook(id, body) {
+  return HTTP.patch(`/books/${id}`, body)
+}
+
+export function deleteBookById(id) {
+  return HTTP.delete(`/books/${id}`)
 }
 
 //materials

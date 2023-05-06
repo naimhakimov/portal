@@ -111,7 +111,7 @@ function logout() {
     </ul>
     <div class="d-flex gap-2 align-items-center aside-profile" v-if="user">
       <i class="bi bi-person-circle"></i>
-      {{ user.first_name }}
+      {{ user.first_name }} {{ user.last_name }}
     </div>
   </aside>
 </template>

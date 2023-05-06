@@ -20,7 +20,7 @@ async function removeTaskHandler(id) {
 <template>
   <div>
     <div class='d-flex align-items-center justify-content-between'>
-      <h3>Масъалахо</h3>
+      <h3>Супоришот</h3>
       <button class='btn btn-primary' @click="$router.push('/task/create')">
         Сохтан
       </button>

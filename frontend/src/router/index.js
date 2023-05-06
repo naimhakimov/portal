@@ -43,6 +43,12 @@ const router = createRouter({
             component: () => import('../views/Slide.vue')
         },
         {
+            path: '/slide/:id',
+            name: 'slide-by-id',
+            meta: {layout: 'main', auth: true},
+            component: () => import('../views/Slide.vue')
+        },
+        {
             path: '/home-work',
             name: 'home-work',
             meta: {layout: 'main', auth: false},

@@ -1,10 +1,11 @@
 <script setup>
 import {ref, onMounted} from "vue";
-import {getByKey} from "../services.js";
+import {getBooks} from "../services.js";
+import {baseURL} from "../plugins/axios.js";
 
 const books = ref([]);
 onMounted(async () => {
-  books.value = await getByKey("books");
+  books.value = await getBooks();
 });
 </script>
 
@@ -15,17 +16,16 @@ onMounted(async () => {
     <div class="card mb-3" v-for="book in books" :key="book.img">
       <div class="row g-0">
         <div class="col-md-4 d-flex align-items-center p-2">
-          <img :src="book.img" class="img-fluid rounded-start" alt="..." />
+          <img :src="baseURL + book.photo" class="img-fluid rounded-start" alt="..." />
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">{{ book.name }}</h5>
-            <p class="card-text">{{ book.description }}</p>
-            <p class="card-text"><b>Автор:</b> {{ book.author }}</p>
+            <h5 class="card-title">{{ book.title }}</h5>
+            <p class="card-text" v-html="book.description"></p>
             <a
               target="_blank"
-              :href="book.file"
-              :download="book.file"
+              :href="baseURL + book.file"
+              download
               class="btn btn-primary"
               >Боргирӣ кардан</a
             >

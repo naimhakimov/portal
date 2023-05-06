@@ -1,11 +1,11 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import { deleteMaterialById, getMaterials, removeFile } from '@/services/http.service.js'
+import { deleteBookById, getAllBook, removeFile } from '@/services/http.service.js'
 
 const materials = ref([])
 
 onMounted(async () => {
-  materials.value = await getMaterials()
+  materials.value = await getAllBook()
 })
 
 async function removeMaterial(item) {
@@ -13,7 +13,7 @@ async function removeMaterial(item) {
   if (isDelete) {
     await removeFile(item.file)
     await removeFile(item.photo)
-    await deleteMaterialById(item._id)
+    await deleteBookById(item._id)
     materials.value = materials.value.filter(
       (lecture) => lecture._id !== item._id
     )
@@ -24,8 +24,8 @@ async function removeMaterial(item) {
 <template>
   <div>
     <div class="d-flex justify-content-between">
-      <h3>Cарчашмаҳои иловаги аз сомона</h3>
-      <button class="btn btn-primary" @click="$router.push('/material/create')">Сохтан</button>
+      <h3>Китоб</h3>
+      <button class="btn btn-primary" @click="$router.push('/book/create')">Сохтан</button>
     </div> 
     <ul class="list-group mt-3">
       <li class="list-group-item" v-for="item in materials" :key="item._id">
@@ -38,7 +38,7 @@ async function removeMaterial(item) {
             </button>
             <button
               class="btn btn-primary"
-              @click="$router.push('/material/edit/' + item._id)"
+              @click="$router.push('/book/edit/' + item._id)"
             >
               Таҳрир
             </button>

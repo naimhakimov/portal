@@ -39,12 +39,12 @@ async function create() {
 <template>
   <div>
     <div class='d-flex justify-content-between'>
-      <h1>Видеохо</h1>
+      <h1>Мултимедиа</h1>
       <button
         class='btn btn-primary btn-sm align-self-baseline'
         @click="$router.push('/video/create')"
       >
-        Сохтани видео
+        Сохтан
       </button>
     </div>
     <ul class='list-group'>

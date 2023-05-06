@@ -1,28 +1,36 @@
 <script setup>
-import {ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 import {useRoute} from "vue-router";
+import {getTasks} from "../services";
 
-const homeWork = [
-  "Аз як компютер ба компютери дигар дар хачми 12 мбайт дар муддати 30 сония маълумот гузаронида шуд. Барои фиристодани 1 Гб маълумот ба мо чӣ кадар вақт лозим аст?",
-  "Аз як компютер ба компютери дигар дар хачми 12 мбайт дар муддати 30 сония маълумот гузаронида шуд. Барои фиристодани 1 Гб маълумот ба мо чӣ кадар вақт лозим аст?",
-  "Аз як компютер ба компютери дигар дар хачми 12 мбайт дар муддати 30 сония маълумот гузаронида шуд. Барои фиристодани 1 Гб маълумот ба мо чӣ кадар вақт лозим аст?",
-];
+const homeWorks = ref([])
+const homeWork = ref(null)
 const route = useRoute();
 const params = ref(route.params.id);
 
-watch([route], () => {
-  params.value = route.params.id;
+onMounted(async () => {
+  homeWorks.value = await getTasks()
+  if (route.params.id) {
+    homeWork.value = homeWorks.value.find(item => item._id === route.params.id)
+  }
+})
+
+watch(route, (value) => {
+  params.value = value.params?.id;
+  if (value.params?.id) {
+    homeWork.value = homeWorks.value.find(item => item._id === value.params.id)
+  }
 });
 </script>
 
 <template>
   <div class="p-3">
-    <h3>{{ params ? 'Супоришоти рузи ' + params : 'Супоришҳо' }}</h3>
+    <h3>{{ params ? 'Супориши ' + homeWork?.title.toLowerCase() : 'Супоришҳо' }}</h3>
 
     <div class="home-work" v-if="!params">
       <div
           class="home-work__item p-3 bg-white rounded-4"
-          v-for="(item, index) in Array(15).fill(1)"
+          v-for="(item, index) in homeWorks"
           :key="item"
       >
         <i class="bi bi-list-task fs-4"></i>
@@ -31,12 +39,12 @@ watch([route], () => {
           {{ index + 1 }}
         </div>
 
-        <button class="btn btn-primary" @click="$router.push('/home-work/' + (index + 1))">Кушодан</button>
+        <button class="btn btn-primary" @click="$router.push('/home-work/' + item._id)">Кушодан</button>
       </div>
     </div>
 
     <div class="d-flex flex-column gap-3" v-else>
-      <div class="card p-3" v-for="(item, idx) in homeWork" :key="idx">
+      <div class="card p-3" v-for="(item, idx) in homeWork?.tasks" :key="idx">
         {{ idx + 1 }}. {{ item }}
       </div>
     </div>

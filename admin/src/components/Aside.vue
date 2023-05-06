@@ -16,16 +16,28 @@ const items = [
     link: 'slide',
   },
   {
-    name: 'Адабиётхо',
+    name: 'Cарчашмаҳои иловаги аз сомона',
     link: 'material',
   },
   {
-    name: 'Масъалахо',
+    name: 'Супоришот',
     link: 'task',
   },
   {
     name: 'Видеохо',
     link: 'video',
+  },
+  {
+    name: 'Амали',
+    link: 'practice',
+  },
+  {
+    name: 'Муаллифон',
+    link: 'author',
+  },
+  {
+    name: 'Китоб',
+    link: 'book',
   },
 ]
 
