@@ -1,0 +1,241 @@
+[{
+  "_id": {
+    "$oid": "64554477146530d4893bc24c"
+  },
+  "title": "Рузи 1",
+  "photo": null,
+  "file": "uploads\\1683685027.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-05T18:01:27.074Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:17:22.952Z"
+  },
+  "slug": "werwe"
+},{
+  "_id": {
+    "$oid": "64564250fb96deb0e4d74370"
+  },
+  "title": "Рузи 2",
+  "photo": null,
+  "file": "uploads\\1683685037.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-06T12:04:32.723Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:17:19.448Z"
+  },
+  "slug": "ruzi-2"
+},{
+  "_id": {
+    "$oid": "645afebf62c451ccf006144c"
+  },
+  "title": "Рузи 3",
+  "photo": null,
+  "file": "uploads\\1683685055.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:17:35.992Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:17:35.992Z"
+  },
+  "slug": "ruzi-3"
+},{
+  "_id": {
+    "$oid": "645afec862c451ccf0061450"
+  },
+  "title": "Рузи 4",
+  "photo": null,
+  "file": "uploads\\1683685063.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:17:44.576Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:17:44.576Z"
+  },
+  "slug": "ruzi-4"
+},{
+  "_id": {
+    "$oid": "645afed362c451ccf0061454"
+  },
+  "title": "Рузи 5",
+  "photo": null,
+  "file": "uploads\\1683685074.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:17:55.216Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:17:55.216Z"
+  },
+  "slug": "ruzi-5"
+},{
+  "_id": {
+    "$oid": "645afeda62c451ccf0061458"
+  },
+  "title": "Рузи 6",
+  "photo": null,
+  "file": "uploads\\1683685081.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:18:02.215Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:18:02.215Z"
+  },
+  "slug": "ruzi-6"
+},{
+  "_id": {
+    "$oid": "645afee262c451ccf006145c"
+  },
+  "title": "Рузи 7",
+  "photo": null,
+  "file": "uploads\\1683685089.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:18:10.369Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:18:10.369Z"
+  },
+  "slug": "ruzi-7"
+},{
+  "_id": {
+    "$oid": "645afeea62c451ccf0061460"
+  },
+  "title": "Рузи 8",
+  "photo": null,
+  "file": "uploads\\1683685097.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:18:18.191Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:18:18.191Z"
+  },
+  "slug": "ruzi-8"
+},{
+  "_id": {
+    "$oid": "645afefd62c451ccf0061465"
+  },
+  "title": "Рузи 9",
+  "photo": null,
+  "file": "uploads\\1683685116.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:18:37.143Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:18:37.143Z"
+  },
+  "slug": "ruzi-9"
+},{
+  "_id": {
+    "$oid": "645aff0662c451ccf0061469"
+  },
+  "title": "Рузи 10",
+  "photo": null,
+  "file": "uploads\\1683685125.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:18:46.015Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:18:46.015Z"
+  },
+  "slug": "ruzi-10"
+},{
+  "_id": {
+    "$oid": "645aff1162c451ccf006146d"
+  },
+  "title": "Рузи 11",
+  "photo": null,
+  "file": "uploads\\1683685136.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:18:57.153Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:18:57.153Z"
+  },
+  "slug": "ruzi-11"
+},{
+  "_id": {
+    "$oid": "645aff1962c451ccf0061471"
+  },
+  "title": "Рузи 12",
+  "photo": null,
+  "file": "uploads\\1683685144.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:19:05.063Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:19:05.063Z"
+  },
+  "slug": "ruzi-12"
+},{
+  "_id": {
+    "$oid": "645aff2062c451ccf0061475"
+  },
+  "title": "Рузи 13",
+  "photo": null,
+  "file": "uploads\\1683685151.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:19:12.472Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:19:12.472Z"
+  },
+  "slug": "ruzi-13"
+},{
+  "_id": {
+    "$oid": "645aff3162c451ccf006147a"
+  },
+  "title": "Рузи 14",
+  "photo": null,
+  "file": "uploads\\1683685169.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:19:29.770Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:19:29.770Z"
+  },
+  "slug": "ruzi-14"
+},{
+  "_id": {
+    "$oid": "645aff3962c451ccf006147e"
+  },
+  "title": "Рузи 15",
+  "photo": null,
+  "file": "uploads\\1683685176.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:19:37.432Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:19:37.432Z"
+  },
+  "slug": "ruzi-15"
+},{
+  "_id": {
+    "$oid": "645aff4462c451ccf0061484"
+  },
+  "title": "Рузи 16",
+  "photo": null,
+  "file": "uploads\\1683685188.pdf",
+  "description": "",
+  "created_at": {
+    "$date": "2023-05-10T02:19:48.864Z"
+  },
+  "updated_at": {
+    "$date": "2023-05-10T02:19:48.864Z"
+  },
+  "slug": "ruzi-16"
+}]
