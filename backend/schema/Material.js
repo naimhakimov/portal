@@ -13,10 +13,6 @@ const schemaMaterial = new Schema({
         type: String,
         default: null
     },
-    file: {
-        type: String,
-        required: true
-    },
     description: {
         type: String,
         default: null

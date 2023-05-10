@@ -2,6 +2,7 @@
 import {onMounted, ref, watch} from "vue";
 import {useRoute} from "vue-router";
 import {getTasks} from "../services";
+import {baseURL} from '../plugins/axios.js'
 
 const homeWorks = ref([])
 const homeWork = ref(null)
@@ -44,9 +45,10 @@ watch(route, (value) => {
     </div>
 
     <div class="d-flex flex-column gap-3" v-else>
-      <div class="card p-3" v-for="(item, idx) in homeWork?.tasks" :key="idx">
-        {{ idx + 1 }}. {{ item }}
-      </div>
+      <iframe
+          width="100%"
+          height="600px"
+          :src="baseURL + homeWork?.file"></iframe>
     </div>
   </div>
 </template>

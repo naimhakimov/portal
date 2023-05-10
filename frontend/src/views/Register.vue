@@ -7,6 +7,7 @@ const router = useRouter()
 const isLoading = ref(false)
 const registerForm = reactive({
   first_name: '',
+  last_name: '',
   email: '',
   password: ''
 })
@@ -53,8 +54,13 @@ const onSubmit = async () => {
       <h2>Бақайдгирӣ</h2>
 
       <div class="mb-3">
-        <label class="form-label">Ному насаб</label>
+        <label class="form-label">Ном</label>
         <input v-model="registerForm.first_name" type="text" class="form-control" placeholder="Name" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Насаб</label>
+        <input v-model="registerForm.last_name" type="text" class="form-control" placeholder="Name" required>
       </div>
 
       <div class="mb-3">

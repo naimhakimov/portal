@@ -1,5 +1,5 @@
 <script setup>
-import { getTaskById, updateTaskById, createTask } from '@/services/http.service'
+import {getTaskById, updateTaskById, createTask, uploadFile, removeFile} from '@/services/http.service'
 import { onMounted, reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { toast } from '@/plugins/toast'
@@ -7,28 +7,19 @@ import { toast } from '@/plugins/toast'
 const router = useRouter()
 const route = useRoute()
 
-const task = reactive({ title: '', tasks: [{title: ''}] })
+const task = reactive({ title: '', file: null })
 
 onMounted(async () => {
   const id = route.params['id']
   if (id) {
     const taskData = await getTaskById(id)
     task.title = taskData.title
-    task.tasks = taskData.tasks.map(i => ({title: i}))
+    task.file = taskData.file
   }
 })
 
-function addTask() {
-  task.tasks.push({title: ''})
-}
-
-function removeTask(idx) {
-  task.tasks.splice(idx, 1)
-}
-
 async function onSubmit() {
   const paramId = route.params['id']
-  task.tasks = task.tasks.map(t => t.title).filter(item => item)
   if (paramId) {
     await updateTaskById(paramId, task)
     await toast.success('Навсози карда шуд')
@@ -37,6 +28,24 @@ async function onSubmit() {
     await createTask(task)
   }
   await router.push('/task')
+}
+
+async function uploadFileHandler(event) {
+  try {
+    const file = await uploadFile(event.target.files[0])
+    task.file = file.url
+  } catch (err) {
+    throw err
+  }
+}
+
+async function deleteFile() {
+  try {
+    await removeFile(task.file)
+    task.file = null
+  } catch (e) {
+    throw e
+  }
 }
 </script>
 
@@ -48,16 +57,21 @@ async function onSubmit() {
       <input type="text" class="form-control" v-model="task.title" />
     </div>
 
-    <div class='d-flex gap-2' v-for="(item, index) in task.tasks" :key="index">
-     <div class='flex-grow-1'>
-       <label>Масъалаи {{ index + 1 }}</label>
-       <textarea class='form-control' v-model="item.title" rows="3"></textarea>
-     </div>
 
-      <button class='btn btn-danger align-self-center' @click='removeTask(index)'>&times;</button>
+    <div>
+      <label class="form-label">Файл</label>
+      <input
+          type="file"
+          class="form-control mb-2"
+          accept="application/pdf"
+          @change="uploadFileHandler($event)"
+      />
+
+      <div class="file" v-if="task.file">
+        <a target='_blank' :href='URL_FILE + task.file'>PDF</a>
+        <div class="file-remove" @click="deleteFile">&times;</div>
+      </div>
     </div>
-
-    <button @click='addTask' style='width: max-content' class='btn btn-primary mt-3'>+</button>
 
     <button class='btn btn-primary mt-3' @click='onSubmit'>{{ route.params['id'] ? 'Дохил кардан' : 'Сохтан' }}</button>
   </div>
