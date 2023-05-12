@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "node backend",
-    "build-admin": "vite build admin",
+    "build": "vite build admin",
     "build-frontend": "vite build frontend"
   },
   "dependencies": {
