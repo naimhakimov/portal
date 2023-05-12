@@ -26,7 +26,7 @@ app.use(errorHandler)
 
 async function start() {
   try {
-    await connect('mongodb+srv://naim:xxgN5hJ0gxdcked8d@cluster0.r7zmmxk.mongodb.net/?retryWrites=true&w=majority')
+    await connect('mongodb+srv://naim:uY4Kz9PxC29McXZL@cluster0.ct3cgda.mongodb.net/?retryWrites=true&w=majority')
     await initialUser()
     app.listen(PORT, () =>
       console.log(`Server has been started on port ${PORT}`)

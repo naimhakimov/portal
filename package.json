@@ -4,9 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "node backend",
-    "admin-start": "vite admin",
-    "frontend-start": "vite admin"
+    "start": "concurrently \"nodemon backend\" \"vite frontend\" \"vite admin\""
   },
   "dependencies": {
     "@popperjs/core": "^2.11.7",
