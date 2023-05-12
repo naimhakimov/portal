@@ -3,7 +3,7 @@ import { useToast } from 'vue-toastification'
 
 
 export const HTTP = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'https://nportal-api.cyclic.app/api',
   headers: {
     'Content-Type': 'application/json'
   }
