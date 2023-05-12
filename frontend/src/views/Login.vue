@@ -2,6 +2,7 @@
 import {reactive, ref} from 'vue'
 import {apiUrl} from "../config/api";
 import {useRouter} from "vue-router";
+import {login} from "../services.js";
 
 const router = useRouter()
 const isLoading = ref(false)
@@ -13,22 +14,9 @@ const loginForm = reactive({
 const onSubmit = async () => {
   try {
     isLoading.value = true
-    const response = await fetch(apiUrl + '/login', {
-      method: 'POST',
-      body: JSON.stringify(loginForm),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    if (response.status === 400) {
-      throw 'Такового пользователя в базе данных не существует'
-    } else if (response.status === 500) {
-      throw 'Упс! Что-то пошло не так.\n'
-    } else {
-      const user = await response.json()
-      localStorage.setItem('user', JSON.stringify(user))
-      await router.push('/')
-    }
+    const response = await login(JSON.stringify(loginForm))
+    localStorage.setItem('user', JSON.stringify(response))
+    await router.push('/')
   } catch (e) {
     alert(e)
     throw e

@@ -1,7 +1,7 @@
 <script setup>
 import {reactive, ref} from 'vue'
-import {apiUrl} from "../config/api";
 import {useRouter} from "vue-router";
+import {register} from "../services.js";
 
 const router = useRouter()
 const isLoading = ref(false)
@@ -15,22 +15,9 @@ const registerForm = reactive({
 const onSubmit = async () => {
   try {
     isLoading.value = true
-    const response = await fetch(apiUrl + '/register', {
-      method: 'POST',
-      body: JSON.stringify(registerForm),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    if (response.status === 400) {
-      throw 'Такой e-mail уже существует'
-    } else if (response.status === 500) {
-      throw 'Упс! Что-то пошло не так.\n'
-    } else {
-      const user = await response.json()
-      localStorage.setItem('user', JSON.stringify(user))
-      await router.push('/')
-    }
+    const response = await register(registerForm)
+    localStorage.setItem('user', JSON.stringify(response))
+    await router.push('/')
   } catch (e) {
     alert(e)
     throw e
