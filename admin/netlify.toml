@@ -1,9 +1,2 @@
 [build]
-  command = "vite build admin"
-  functions = "netlify/functions"
-  publish = "admin/dist"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  command   = "npm run build-admin"
